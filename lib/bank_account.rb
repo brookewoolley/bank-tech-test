@@ -26,4 +26,8 @@ class BankAccount
     @transactions.push([amount, balance])
   end
 
+  def date_format(date = Date.today)
+    transaction_date = date.strftime("%d/%m/%Y")
+  end
+
 end
