@@ -12,6 +12,7 @@ RSpec.describe BankAccount do
       subject.deposit(1000)
       expect(subject.balance).to eq(1000)
     end
+
   end
 
   describe '#withdraw' do
@@ -19,6 +20,10 @@ RSpec.describe BankAccount do
       subject.deposit(1000)
       subject.withdraw(500)
       expect(subject.balance).to eq(500)
+    end
+
+    it 'can check for sufficient funds' do
+      expect{subject.withdraw(20)}.to raise_error "Insufficient funds"
     end
   end
 end
