@@ -3,7 +3,7 @@
 Process:
 
 1.  Write user stories
-2.  Diagram by hand
+2.  Diagram
 3.  First test
 
 # User Stories
