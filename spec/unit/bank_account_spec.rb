@@ -12,7 +12,6 @@ RSpec.describe BankAccount do
       subject.deposit(1000)
       expect(subject.balance).to eq(1000)
     end
-
   end
 
   describe '#withdraw' do
@@ -26,4 +25,21 @@ RSpec.describe BankAccount do
       expect{subject.withdraw(20)}.to raise_error "Insufficient funds"
     end
   end
+
+  describe '#transactions' do
+      it 'can accept a transaction' do
+        expect(subject.transactions).to be_a(Array)
+      end
+
+      it 'can add a deposit transaction to list' do
+        subject.deposit(100)
+        expect(subject.transactions[0]).to eq([100, 100])
+      end
+
+      it 'can add a withdrawal transaction to list' do
+        subject.deposit(1000)
+        subject.withdraw(100)
+        expect(subject.transactions[-1]).to eq([100, 900])
+      end
+    end
 end
