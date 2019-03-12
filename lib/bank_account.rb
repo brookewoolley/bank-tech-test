@@ -21,15 +21,19 @@ class BankAccount
   end
 
   def save_deposit(deposit_date, amount, balance)
-    @transactions.push([deposit_date, amount, nil, balance])
+    @transactions.push([deposit_date, currency_format(amount), nil, currency_format(balance)])
   end
 
   def save_withdrawal(withdrawal_date, amount, balance)
-    @transactions.push([withdrawal_date, nil, amount, balance])
+    @transactions.push([withdrawal_date, nil, currency_format(amount), currency_format(balance)])
   end
 
   def date_format(date)
     date_to_format = DateTime.parse(date.to_s)
     date_to_format.strftime('%d/%m/%Y')
+  end
+
+  def currency_format(amount)
+    "%.2f" % amount
   end
 end
