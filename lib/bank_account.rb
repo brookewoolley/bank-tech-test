@@ -1,7 +1,6 @@
 require 'date'
 
 class BankAccount
-
   attr_reader :balance, :transactions
 
   def initialize(balance = 0)
@@ -15,7 +14,8 @@ class BankAccount
   end
 
   def withdraw(amount, date = Date.today)
-    fail "Insufficient funds" if @balance < amount
+    raise 'Insufficient funds' if @balance < amount
+
     @balance -= amount
     save_withdrawal(date_format(date), amount, @balance)
   end
@@ -30,7 +30,6 @@ class BankAccount
 
   def date_format(date)
     date_to_format = DateTime.parse(date.to_s)
-    transaction_date = date_to_format.strftime("%d/%m/%Y")
+    date_to_format.strftime('%d/%m/%Y')
   end
-
 end
