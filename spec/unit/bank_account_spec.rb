@@ -39,8 +39,8 @@ RSpec.describe BankAccount do
 
       it 'can add a withdrawal transaction to list' do
         subject.deposit(1000, "10-02-2018")
-        subject.withdraw(100)
-        expect(subject.transactions[-1]).to eq([100, 900])
+        subject.withdraw(100, "11-02-2019")
+        expect(subject.transactions[-1]).to eq(["11/02/2019", nil, 100, 900])
       end
     end
 

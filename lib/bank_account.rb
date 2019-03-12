@@ -11,27 +11,26 @@ class BankAccount
 
   def deposit(amount, date = Date.today)
     @balance += amount
-    deposit_date = date_format(date.to_s)
-    save_deposit(deposit_date, amount, @balance)
+    save_deposit(date_format(date), amount, @balance)
   end
 
-  def withdraw(amount)
+  def withdraw(amount, date = Date.today)
     fail "Insufficient funds" if @balance < amount
     @balance -= amount
-    save_withdrawal(amount, @balance)
+    save_withdrawal(date_format(date), amount, @balance)
   end
 
   def save_deposit(deposit_date, amount, balance)
     @transactions.push([deposit_date, amount, nil, balance])
   end
 
-  def save_withdrawal(amount, balance)
-    @transactions.push([amount, balance])
+  def save_withdrawal(withdrawal_date, amount, balance)
+    @transactions.push([withdrawal_date, nil, amount, balance])
   end
 
   def date_format(date)
-    date2 = DateTime.parse(date)
-    transaction_date = date2.strftime("%d/%m/%Y")
+    date_to_format = DateTime.parse(date.to_s)
+    transaction_date = date_to_format.strftime("%d/%m/%Y")
   end
 
 end
