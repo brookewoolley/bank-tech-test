@@ -1,9 +1,7 @@
 class BankStatement
 
-  attr_reader :transactions
-
-  def initialize
-    @transactions = []
+  def header
+    "date || credit || debit || balance"
   end
 
 end
