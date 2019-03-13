@@ -2,6 +2,8 @@
 
 I wrote this program in Ruby and have tested it with RSpec (I have 100% coverage).  I am using SimpleCov for coverage reporting and Rubocop for linting.
 
+I have created two classes: BankAccount and BankStatement.  The account class looks after the balance and transactions.  The Statement looks after the display of the transactions which I think is the simple and logical approach.
+
 Process:
 
 1.  Write user stories
