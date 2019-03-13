@@ -20,6 +20,8 @@ class BankAccount
     save_withdrawal(date_format(date), amount, @balance)
   end
 
+  private
+  
   def save_deposit(deposit_date, amount, balance)
     @transactions.push([deposit_date, currency_format(amount), nil, currency_format(balance)])
   end

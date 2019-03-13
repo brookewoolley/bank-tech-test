@@ -43,17 +43,4 @@ RSpec.describe BankAccount do
       expect(subject.transactions[-1]).to eq(['11/02/2019', nil, '100.00', '900.00'])
     end
   end
-
-  describe '#date_format' do
-    it 'can format a date input' do
-      allow(Date).to receive(:today).and_return('11-03-2018')
-      expect(subject.date_format(Date.today)).to eq('11/03/2018')
-    end
-  end
-
-  describe '#currency_format' do
-    it 'can format a deposit or withdrawal to 2 decimal places' do
-      expect(subject.currency_format(200)).to eq("200.00")
-    end
-  end
 end
