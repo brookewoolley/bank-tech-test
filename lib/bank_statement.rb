@@ -1,5 +1,3 @@
-require_relative 'bank_account'
-
 class BankStatement
   def header
     'date || credit || debit || balance'
