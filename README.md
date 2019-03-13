@@ -37,6 +37,20 @@ I would like to print my statement and see my transaction information
 
 ![irb](https://github.com/brookewoolley/bank-tech-test/blob/master/classDiagram.png)
 
+# How to use the app
+
+Clone this repo and run bundle install in your command-line
+```
+git clone git@github.com:brookewoolley/bank-tech-test.git
+bundle install
+```
+
+To run the tests, open the directory in your command-line and run
+```
+rspec
+```
+To use the app, run irb and use the app as shown below
+
 # Use of app in IRB
 
 ![irb](https://github.com/brookewoolley/bank-tech-test/blob/master/banktestirb.png)
