@@ -7,7 +7,7 @@ class BankStatement
 
   def print(account)
     puts header
-    account.transactions.each { |a, b, c, d|
+    account.transactions.reverse.each { |a, b, c, d|
     puts a + "  ||  " + b.to_s + "  ||  " + c.to_s + "  ||  " + d.to_s
     }
   end
