@@ -1,11 +1,15 @@
 # Bank Tech Test
 
+I wrote this program in Ruby and have tested it with RSpec (I have 100% coverage).  I am using SimpleCov for coverage reporting and Rubocop for linting.
+
 Process:
 
 1.  Write user stories
 2.  Diagram
 3.  First test
-4.  Pass test, move onto the next test
+4.  Pass test
+5.  Refactor where possible
+6.  Commit passing code and move onto the next test
 
 # User Stories
 

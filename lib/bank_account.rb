@@ -21,13 +21,15 @@ class BankAccount
   end
 
   private
-  
+
   def save_deposit(deposit_date, amount, balance)
-    @transactions.push([deposit_date, currency_format(amount), nil, currency_format(balance)])
+    @transactions.push([deposit_date, currency_format(amount), nil,
+                        currency_format(balance)])
   end
 
   def save_withdrawal(withdrawal_date, amount, balance)
-    @transactions.push([withdrawal_date, nil, currency_format(amount), currency_format(balance)])
+    @transactions.push([withdrawal_date, nil, currency_format(amount),
+                        currency_format(balance)])
   end
 
   def date_format(date)
@@ -36,6 +38,6 @@ class BankAccount
   end
 
   def currency_format(amount)
-    "%.2f" % amount
+    '%.2f' % amount
   end
 end
