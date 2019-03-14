@@ -1,7 +1,6 @@
 require 'bank_account'
 
 RSpec.describe BankAccount do
-
   describe '#deposit' do
     it 'can update the balance and take date argument' do
       expect { subject.deposit(1000, '10-01-2017') }.to change { subject.balance }.by(1000)
@@ -10,7 +9,6 @@ RSpec.describe BankAccount do
     it 'can update the balance without date argument' do
       expect { subject.deposit(1000) }.to change { subject.balance }.by(1000)
     end
-
   end
 
   describe '#withdraw' do
@@ -31,17 +29,16 @@ RSpec.describe BankAccount do
   end
 
   describe '#transactions' do
-
     it 'can add a deposit transaction to list' do
       subject.deposit(200, '10-01-2012')
       subject.deposit(100, '13-01-2012')
-      expect(subject.transactions[1]).to eq({:balance=>"300.00", :credit=>"100.00", :date=>"13/01/2012", :debit=>nil})
+      expect(subject.transactions[1]).to eq(balance: '300.00', credit: '100.00', date: '13/01/2012', debit: nil)
     end
 
     it 'can add a withdrawal transaction to list' do
       subject.deposit(1000, '10-02-2018')
       subject.withdraw(100, '11-02-2019')
-      expect(subject.transactions[-1]).to eq({:balance=>"900.00", :credit=>nil, :date=>"11/02/2019", :debit=>"100.00"})
+      expect(subject.transactions[-1]).to eq(balance: '900.00', credit: nil, date: '11/02/2019', debit: '100.00')
     end
   end
 end
