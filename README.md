@@ -2,7 +2,7 @@
 
 I wrote this program in Ruby and have tested it with RSpec (I have 100% coverage).  I am using SimpleCov for coverage reporting and Rubocop for linting.
 
-I have created two classes: BankAccount and BankStatement.  The account class looks after the balance and transactions.  The Statement looks after the display of the transactions which I think is the simple and logical approach.
+I have created two classes: BankAccount and BankStatement.  The account class looks after the balance and transactions.  The Statement looks after the display of the transactions.  
 
 Process:
 
@@ -12,6 +12,7 @@ Process:
 4.  Pass test
 5.  Refactor where possible
 6.  Commit passing code and move onto the next test
+7.  Once 'finished' I have sought feedback from a peer and have refactored both code and tests.
 
 # User Stories
 
