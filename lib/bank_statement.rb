@@ -1,7 +1,13 @@
 class BankStatement
 
   def print(account)
-    puts header
+    header
+    transaction_format(account)
+  end
+
+  private
+
+  def transaction_format(account)
     account.transactions.reverse_each do |transaction|
       t_date = transaction.fetch(:date)
       t_credit = transaction.fetch(:credit)
@@ -11,8 +17,7 @@ class BankStatement
     end
   end
 
-  private
   def header
-    'date || credit || debit || balance'
+    puts 'date || credit || debit || balance'
   end
 end
